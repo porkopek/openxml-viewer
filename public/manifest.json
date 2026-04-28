@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "OpenXML Viewer",
+  "description": "Inspect OpenXML packages directly in Chrome.",
+  "version": "0.1.0",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "OpenXML Viewer",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "index.html",
+    "open_in_tab": true
+  }
+}

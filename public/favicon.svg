@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <title>OpenXML Viewer</title>
+  <rect width="256" height="256" rx="56" fill="#2563EB" />
+  <path d="M102 62L58 128L102 194" stroke="white" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M154 62L198 128L154 194" stroke="white" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
