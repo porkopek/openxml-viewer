@@ -1,0 +1,30 @@
+.root {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 0;
+  border-radius: 0;
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-text);
+  text-align: center;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.root[data-accept] {
+  background-color: #3b82f6;
+  color: var(--mantine-color-white);
+}
+
+.root[data-reject] {
+  background-color: #ef4444;
+  color: var(--mantine-color-white);
+}
+
+.content {
+  width: min(100%, 36rem);
+}

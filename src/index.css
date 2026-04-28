@@ -52,41 +52,6 @@ textarea {
   color: #0f172a;
 }
 
-.openxml-dropzone {
-  border: 0 !important;
-  border-radius: 0 !important;
-}
-
-.openxml-dropzone .dropzone-icon,
-.openxml-dropzone .dropzone-title,
-.openxml-dropzone .dropzone-muted {
-  transition: color 150ms ease;
-}
-
-.openxml-dropzone .dropzone-icon {
-  color: #a1a1aa;
-}
-
-.openxml-dropzone .dropzone-title {
-  color: #18181b;
-}
-
-.openxml-dropzone .dropzone-muted {
-  color: #71717a;
-}
-
-.openxml-dropzone[data-accept] .dropzone-icon,
-.openxml-dropzone[data-accept] .dropzone-title,
-.openxml-dropzone[data-accept] .dropzone-muted {
-  color: #ffffff;
-}
-
-.openxml-dropzone[data-reject] .dropzone-icon,
-.openxml-dropzone[data-reject] .dropzone-title,
-.openxml-dropzone[data-reject] .dropzone-muted {
-  color: #dc2626;
-}
-
 .openxml-xml-attribute-0 { color: #2563eb !important; font-weight: 600; }
 .openxml-xml-attribute-1 { color: #7c3aed !important; font-weight: 600; }
 .openxml-xml-attribute-2 { color: #dc2626 !important; font-weight: 600; }

@@ -1,6 +1,8 @@
 import type { MutableRefObject } from 'react';
+import { Stack, Text } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 import { IconFileZip, IconUpload, IconX } from '@tabler/icons-react';
+import classes from './PackageDropzone.module.css';
 
 const acceptedPackageTypes = {
   [MIME_TYPES.docx]: ['.docx', '.docm', '.dotx', '.dotm'],
@@ -25,7 +27,8 @@ export function PackageDropzone({ loading, error, openRef, onFile, onReject }: P
       multiple={false}
       maxFiles={1}
       accept={acceptedPackageTypes}
-      className="openxml-dropzone !rounded-none !border-0 flex h-screen w-full items-center justify-center bg-zinc-50 px-6 py-10 text-zinc-950 transition-colors duration-150 data-[accept]:bg-blue-500 data-[accept]:text-white data-[reject]:bg-red-50 data-[reject]:text-red-600"
+      radius={0}
+      className={classes.root}
       onDrop={(files) => {
         const [nextFile] = files;
         if (nextFile) {
@@ -34,27 +37,37 @@ export function PackageDropzone({ loading, error, openRef, onFile, onReject }: P
       }}
       onReject={() => onReject('Please choose a valid OpenXML package such as .docx, .xlsx, .pptx, or .zip.')}
     >
-      <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-5 text-center" style={{ pointerEvents: 'none' }}>
-        <div className="dropzone-icon-wrapper flex items-center justify-center">
+      <Stack gap="sm" align="center" className={classes.content}>
+        <div>
           <Dropzone.Accept>
-            <IconUpload size={52} className="dropzone-icon" stroke={1.5} />
+            <IconUpload size={52}   stroke={1.5} />
           </Dropzone.Accept>
           <Dropzone.Reject>
-            <IconX size={52} className="dropzone-icon dropzone-icon-reject" stroke={1.5} />
+            <IconX size={52}   stroke={1.5} />
           </Dropzone.Reject>
           <Dropzone.Idle>
-            <IconFileZip size={52} className="dropzone-icon" stroke={1.5} />
+            <IconFileZip size={52} color="var(--mantine-color-dimmed)" stroke={1.5} />
           </Dropzone.Idle>
         </div>
 
-        <div className="space-y-2">
-          <h1 className="dropzone-title text-3xl font-semibold tracking-tight">OpenXML Viewer</h1>
-          <p className="dropzone-muted text-sm">Drop a package or click to choose one.</p>
-          <p className="dropzone-muted text-sm">.docx · .xlsx · .pptx · .zip</p>
-        </div>
+        <Stack gap={4} align="center">
+          <Text size="2rem" fw={600} lh={1.1} c="inherit">
+            OpenXML Viewer
+          </Text>
+          <Text size="sm" c="inherit">
+            Drop a package or click to choose one.
+          </Text>
+          <Text size="sm" c="inherit">
+            .docx · .xlsx · .pptx · .zip
+          </Text>
+        </Stack>
 
-        {error ? <p className="text-sm text-red-600">{error}</p> : null}
-      </div>
+        {error ? (
+          <Text size="sm" c="red.6">
+            {error}
+          </Text>
+        ) : null}
+      </Stack>
     </Dropzone>
   );
 }
